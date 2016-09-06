@@ -6,21 +6,31 @@
 var audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 //Create tone and panner
-var oscillator = audioContext.createOscillator();
+var leftTone = audioContext.createOscillator();
+var rightTone = audioContext.createOscillator();
 var leftEar = audioContext.createStereoPanner();
 var rightEar = audioContext.createStereoPanner();
 
-oscillator.type = 'sine';
-oscillator.frequency.value = 210;
+leftTone.type = 'sine';
+rightTone.type = 'sine';
+
+leftTone.frequency.value = 146.1;
+rightTone.frequency.value = 136.1;
 leftEar.pan.value = -1;
+rightEar.pan.value = 1;
 
 // Connect the sources up to the effects, and the effects to the destination.
-oscillator.connect(leftEar);
+leftTone.connect(leftEar);
+rightTone.connect(rightEar);
 leftEar.connect(audioContext.destination);
+rightEar.connect(audioContext.destination);
 
-oscillator.start();
-oscillator.stop(audioContext.currentTime + 3);
+leftTone.start();
+rightTone.start();
+leftTone.stop(audioContext.currentTime + 10);
+rightTone.stop(audioContext.currentTime + 10);
 
+//Frequency is equivalent to difference between frequency in left and right ear
 var frequency = {
   "Gamma" : [30, 50],
   "Beta" : [14, 30],
