@@ -1,0 +1,66 @@
+{
+  "name": "bulma",
+  "version": "0.1.2",
+  "homepage": "http://bulma.io",
+  "author": {
+    "name": "jgthms",
+    "email": "bbxdesign@gmail.com"
+  },
+  "description": "Modern CSS framework based on Flexbox",
+  "main": "bulma.sass",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgthms/bulma.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "bugs": {
+    "url": "https://github.com/jgthms/bulma/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "captain-git-hook": "~1.0.5",
+    "node-sass": "^3.4.2",
+    "postcss-cli": "^2.5.1"
+  },
+  "scripts": {
+    "autoprefix": "postcss --use autoprefixer --output css/bulma.css css/bulma.css",
+    "build": "npm run clean && npm run build-sass && npm run autoprefix",
+    "build-sass": "node-sass --output-style expanded --source-map true --output css/ bulma.sass --outFile css/bulma.css",
+    "clean": "rm -rf css",
+    "pre-push": "npm run build && git add css && git commit --amend --no-edit",
+    "start": "npm run build-sass -- --watch"
+  },
+  "gitHead": "1d9f6318a53b2689463510845af9c9d670424df6",
+  "_id": "bulma@0.1.2",
+  "_shasum": "2012326d98314d4d3bd57220381b731b593a6d84",
+  "_from": "bulma@latest",
+  "_npmVersion": "3.6.0",
+  "_nodeVersion": "5.6.0",
+  "_npmUser": {
+    "name": "jgthms",
+    "email": "bbxdesign@gmail.com"
+  },
+  "dist": {
+    "shasum": "2012326d98314d4d3bd57220381b731b593a6d84",
+    "tarball": "https://registry.npmjs.org/bulma/-/bulma-0.1.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "jgthms",
+      "email": "bbxdesign@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/bulma-0.1.2.tgz_1469986657970_0.07174309506081045"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/bulma/-/bulma-0.1.2.tgz"
+}

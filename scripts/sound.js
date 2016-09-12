@@ -1,19 +1,18 @@
-//create a synth and connect it to the master output (your speakers)
-
-//Connect each separate tone to split
+//Create left an right tones and put them in separate audio channels
 var merge = new Tone.Merge().toMaster();
 var leftEar = new Tone.Oscillator().connect(merge.left);
 var rightEar = new Tone.Oscillator().connect(merge.right);
 
+//Choose what Hz you want to use for each ear - will be controlled by slider
 leftEar.frequency.value = 400;
 rightEar.frequency.value = 500;
 
 //Start frequencies in each ear
-leftEar.start()
-       .stop("5s");
-
-rightEar.start()
-        .stop("10s");
+// leftEar.start()
+//        .stop("5s");
+//
+// rightEar.start()
+//         .stop("10s");
 
 //Frequency is equivalent to difference between frequency in left and right ear
 var frequency = {
