@@ -1,10 +1,22 @@
 @import url("../node_modules/bulma/css/bulma.css");
-
-h2 {
-  color: black;
-  font-size: 1.2em;
+/*h2 {
+    color: black;
+    font-size: 1.2em;
+}*/
+nav {
+    margin-bottom: 54.88px;
+    position: absolute;
 }
-
 .header-button {
-  margin: 2%;
+    margin: 2%;
+}
+.box {
+  margin:auto;
+}
+/*Get style like this: http://www.cssauthor.com/wp-content/uploads/2013/10/Flat-UI-Kit-Basic-UI-control-elements.jpg*/
+
+
+input[type="range"] {
+    display: block;
+    padding: 3%;
 }

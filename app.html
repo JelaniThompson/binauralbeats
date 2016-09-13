@@ -6,36 +6,56 @@
     <link rel="stylesheet" href="styles/app.css">
 </head>
 
-<body>
-    <!--Navigation with left, center and right floating-->
-    <nav class="nav">
-        <div class="nav-left">
-            <a class="nav-item" href="#">
-                <h2>Wavy - Binaural Beat Maker</h2>
-            </a>
-        </div>
+<!--Navigation with left, center and right floating-->
+<nav class="nav has-shadow">
+    <div class="nav-left">
+        <a class="nav-item" href="#">
+            <h1 class="title">Wavy Binaural Beats</h1>
+        </a>
+    </div>
 
-        <div class="nav-center">
-            <a class="nav-item" href="https://github.com/JelaniThompson/binauralbeats" target="_blank">
-              <span class="icon">
+    <div class="nav-center">
+        <a class="nav-item" href="https://github.com/JelaniThompson/binauralbeats" target="_blank">
+            <span class="icon">
                 <i class="fa fa-github"></i>
               </span>
-            </a>
-        </div>
+        </a>
+    </div>
 
-        <div class="nav-right">
-            <a class="nav-item button is-warning is-medium header-button" href="#">
+    <div class="nav-right">
+        <a class="nav-item button is-warning is-medium header-button" href="#">
               Donate
             </a>
+    </div>
+</nav>
+
+<body>
+    <div class="container">
+        <!--Metro style grid-->
+
+        <!--Sliders-->
+        <div class="tile is-ancestor">
+          <div class="tile is-2 is-parent">
+            <div class="tile box is-child notification is-success" id="frequency-sliders">
+              <p class="title">Sliders</p>
+                <!--Add text boxes in future for setting decimal values-->
+                <input type="range" class="slider" id="left" min="0" max="1500">
+                <input type="range" class="slider" id="right" min="0" max="1500">
+            </div>
+          </div>
+
+          <!--Binaural Beats Information-->
+          <div class="tile is-parent">
+            <div class="tile is-child box notification is-danger">
+              <p class="title">What <i>are</i> Binaural Beats?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
         </div>
-    </nav>
-
-    <!--Metro style grid-->
-    <div class="tile"></div>
-
-    <!--Add text boxes in future for setting decimal values-->
-    <input type="range" class="slider" id="left" min="0" max="1500">
-    <input type="range" class="slider" id="right" min="0" max="1500">
+    </div>
 
     <script type="text/javascript" src="node_modules/tone/build/Tone.js"></script>
     <script type="text/javascript" src="scripts/sound.js"></script>
