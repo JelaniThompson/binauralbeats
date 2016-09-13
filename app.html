@@ -1,11 +1,29 @@
 <head>
-  <title>Binaural Beats</title>
-  <!--Add icons to use with Bulma-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles/app.css">
+    <title>Binaural Beats</title>
+    <!--Add icons to use with Bulma-->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/app.css">
 </head>
 
 <body>
-  <script type="text/javascript" src="node_modules/tone/build/Tone.js"></script>
-  <script type="text/javascript" src="scripts/sound.js"></script>
+    <div id="container">
+        <!--Navigation with left, center and right floating-->
+        <nav class="nav">
+            <div class="nav-left">
+                <h1>Wavy - Binaural Beats</h1>
+            </div>
+        </nav>
+        <!--Metro style grid-->
+        <div class="tile">
+          
+        </div>
+    </div>
+    <!--Add text boxes in future for setting decimal values-->
+    <input type="range" class="slider" id="left" min="0" max="1500">
+    <input type="range" class="slider" id="right" min="0" max="1500">
+    </div>
+
+    <script type="text/javascript" src="node_modules/tone/build/Tone.js"></script>
+    <script type="text/javascript" src="scripts/sound.js"></script>
 </body>
