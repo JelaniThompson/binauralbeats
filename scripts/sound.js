@@ -5,7 +5,10 @@ var rightEar = new Tone.Oscillator().connect(merge.right);
 
 //Choose what Hz you want to use for each ear - will be controlled by slider
 leftEar.frequency.value = 400;
-rightEar.frequency.value = 500;
+rightEar.frequency.value = 450;
+
+var currentState = "Gamma";
+$(".currentState").html(currentState);
 
 // //Start frequencies in each ear
 // leftEar.start()

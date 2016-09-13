@@ -1,22 +1,39 @@
 @import url("../node_modules/bulma/css/bulma.css");
-/*h2 {
-    color: black;
-    font-size: 1.2em;
-}*/
 nav {
     margin-bottom: 54.88px;
-    position: absolute;
 }
 .header-button {
     margin: 2%;
 }
-.box {
-  margin:auto;
+input[type=range] {
+    padding: 3%;
+    display: inline-block;
+    margin: 0 2% 0 2%;
 }
+input[type=text] {
+    width: 25%;
+}
+.frequency-sliders {
+    text-align: center;
+}
+.binaural-info {
+    font-size: 1.3em;
+}
+.leftInfo, .rightInfo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+Todo List:
+
+Have Slider, Binaural Beats Information, Presets, Sources to learn more about binaural beats
+Automated switching to tell you what state you're in plus the specific effect you're getting and text boxes to
+set each slider to specific numbers
+
+Add inspired by Jordan Rakei's song "Theta State"
+
 /*Get style like this: http://www.cssauthor.com/wp-content/uploads/2013/10/Flat-UI-Kit-Basic-UI-control-elements.jpg*/
 
-
-input[type="range"] {
-    display: block;
-    padding: 3%;
-}
+*/
