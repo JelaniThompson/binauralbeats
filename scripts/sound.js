@@ -7,6 +7,13 @@ var rightEar = new Tone.Oscillator().connect(merge.right);
 leftEar.frequency.value = 0;
 rightEar.frequency.value = 0;
 
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+
 var currentState = "Gamma";
 $(".currentState").html(currentState);
 
@@ -23,6 +30,11 @@ $("#rightSlider").change(function() {
     rightEar.frequency.value = this.value;
     rightEar.start();
 });
+
+//Check the Hz in each ear and adjust description box accordingly
+function checkState() {
+
+}
 
 // //Start frequencies in each ear
 // leftEar.start()
