@@ -10,6 +10,14 @@ rightEar.frequency.value = 450;
 var currentState = "Gamma";
 $(".currentState").html(currentState);
 
+var descriptions = {
+  "Beta" : "Beta is the most common brain wave pattern: Beta brainwaves are produced when we are wide awake, alert, active and engaged in mental activity, usually involving more the rational, reality-oriented left hemisphere of our brain. When beta wave activity becomes very intense, our brain hemispheres become less synchronized. Beta state is required to function properly in your everyday life.",
+  "Alpha" : "These are lower frequency waves: The state is generated when our thoughts are really not concentrated and our minds wonder freely, or we are in a relaxed state such as meditating or daydreaming. We also experience Alpha Brainwaves when we are gently busy with routine tasks like pottering in the garden, taking a shower, putting on makeup, doing light housework. Alpha is considered to be the bridge between the conscious mind and the subconscious mind.",
+  "Theta" : "Theta brainwave states have been used in meditation for centuries: It is common for people to feel as if they are in a trance, where the mind feels as though it may have gone to sleep although it is conscious of what is happening around it. Theta induces a capacity for prolonged daydreaming, where a loss of time may be experienced.",
+  "Delta" : "Delta is the place of deepest relaxation, deepest healing, deepest spiritual connection and deepest connection with the subconscious mind. It is considered to be the gateway to the unconscious mind and the collective unconscious, bringing access to the universal psyche or mind.",
+  "Gamma" : "Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain."
+};
+
 // //Start frequencies in each ear
 // leftEar.start()
 //        .stop("5s");

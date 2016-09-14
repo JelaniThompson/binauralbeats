@@ -1,4 +1,7 @@
 @import url("../node_modules/bulma/css/bulma.css");
+.container {
+    display: flex;
+}
 nav {
     margin-bottom: 54.88px;
 }
@@ -18,6 +21,17 @@ input[type=text] {
 }
 .binaural-info {
     font-size: 1.3em;
+}
+#binaural-description {
+    padding: 1%;
+}
+#presets {
+    height: 20%;
+    text-align: center;
+}
+#dropdown {
+    margin-bottom: 5%;
+    margin-left: 36%;
 }
 .leftInfo, .rightInfo {
     display: block;
