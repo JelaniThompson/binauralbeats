@@ -24,7 +24,7 @@
 
     <div class="nav-right">
         <!--Bring up content modal when clicked-->
-        <a class="nav-item button is-success is-medium header-button" href="#">
+        <a class="nav-item button is-info is-medium header-button" href="#">
         Learn More
       </a>
         <a class="nav-item button is-warning is-medium header-button" href="#">
@@ -45,11 +45,11 @@
                     <p class="title">Sliders</p>
                     <!--Add text boxes in future for setting decimal values-->
                     <p class="leftInfo">Left Ear</p>
-                    <input class="input" type="text" placeholder="Hz">
-                    <input type="range" class="slider" id="left" min="0" max="1500">
+                    <input class="input" id="leftHz" type="text" placeholder="Hz">
+                    <input type="range" class="slider" id="leftSlider" min="0" max="1500">
                     <p class="rightInfo">Right Ear</p>
-                    <input class="input" type="text" placeholder="Hz">
-                    <input type="range" class="slider" id="right" min="0" max="1500">
+                    <input class="input" id="rightHz" type="text" placeholder="Hz">
+                    <input type="range" class="slider" id="rightSlider" min="0" max="1500">
                 </div>
 
                 <div class="tile is-child notification is-warning">
@@ -72,16 +72,15 @@
                 <div class="tile is-parent">
                     <div class="tile is-child box notification is-success" id="presets">
                         <p class="title">Preset States</p>
-                        <p class="subtitle">I want to feel.....</p>
+                        <p class="subtitle">I want to be.....</p>
                         <div class="control">
                             <span class="select is-large" id="dropdown">
                         <select>
-                          <option>Harambe</option>
-                          <option>Dat Boi</option>
-                          <option>Arthur</option>
-                          <option>Chicken Little</option>
-                          <option>Doge</option>
-                          <option>Pepe</option>
+                          <option>Alert (Beta)</option>
+                          <option>Relaxed (Alpha)</option>
+                          <option>Creative (Theta)</option>
+                          <option>Sleepy (Delta)</option>
+                          <option>Intelligent (Gamma)</option>
                         </select>
                     </div>
                   </div>
