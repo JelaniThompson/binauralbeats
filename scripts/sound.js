@@ -25,6 +25,19 @@ $("#rightSlider").on("input", function(){
   rightEar.start();
 });
 
+//If value in text box changes, update slider accordingly
+$("#leftHz").on("input", function(){
+  $("#leftSlider").val($("#leftHz").val());
+  leftEar.frequency.value = $("#leftHz").val();
+  leftEar.start();
+});
+
+$("#rightHz").on("input", function(){
+  $("#rightSlider").val($("#rightHz").val());
+  rightEar.frequency.value = $("#rightHz").val();
+  rightEar.start();
+});
+
 function test(){
 
 }
