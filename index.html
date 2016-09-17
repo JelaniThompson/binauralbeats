@@ -36,27 +36,32 @@
 
 <body>
     <div class="container">
-        <!--Metro style grid-->
 
+        <!--Metro style grid-->
         <div class="tile is-ancestor">
             <div class="tile is-4 is-parent is-vertical">
 
-                <!--Sliders-->
                 <div class="tile box is-child frequency-sliders">
+
+                    <!--Sliders and boxes-->
                     <p class="title">Sliders</p>
-                    <!--Add text boxes in future for setting decimal values-->
+                    <p class="subtitle">Choose specific values with the text boxes</p>
+
+                    <!--Left Ear-->
                     <p class="leftInfo">Left Ear</p>
-                    <input class="input" id="leftHz" type="text" placeholder="Hz">
-                    <input type="range" class="slider" id="leftSlider" min="0" max="1500">
+                    <input class="input" id="leftHz" v-model="leftData" type="text" placeholder="Hz">
+                    <input type="range" class="slider" id="leftSlider" onChange="test()" v-model="leftHz" max="1500" value="0" step="10">
+
+                    <!--Right Ear-->
                     <p class="rightInfo">Right Ear</p>
-                    <input class="input" id="rightHz" type="text" placeholder="Hz">
-                    <input type="range" class="slider" id="rightSlider" min="0" max="1500">
+                    <input class="input" id="rightHz" v-model="rightData" type="text" placeholder="Hz">
+                    <input type="range" class="slider" id="rightSlider" max="1500" value="0" step="10">
                 </div>
 
+                <!--Current State-->
                 <div class="tile is-child notification is-warning">
                     <p class="title currentState"></p>
-                    <p>Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability
-                        to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain.</p>
+                    <p class="description">{{ message }}</p>
                 </div>
             </div>
 
@@ -66,7 +71,7 @@
                     <p class="title">Preset States</p>
                     <p class="subtitle">I want to be.....</p>
                     <div class="control">
-                        <span class="select is-large" id="dropdown">
+                        <span class="select is-medium" id="dropdown">
                 <select>
                   <option>Alert (Beta)</option>
                   <option>Relaxed (Alpha)</option>
