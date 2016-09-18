@@ -9,54 +9,15 @@ rightEar.frequency.value = 0;
 $("#leftHz").val(leftEar.frequency.value);
 $("#rightHz").val(rightEar.frequency.value);
 
-var currentState = "Gamma";
-$(".currentState").html(currentState);
+var states = ["Beta", "Alpha", "Theta", "Delta", "Gamma"];
 
-//Check the Hz in each ear and adjust description box accordingly
-$("#leftSlider").on("input", function() {
-  leftEar.frequency.value = $("#leftSlider").val();
-  $("#leftHz").val(leftEar.frequency.value);
-  leftEar.start();
-});
-
-$("#rightSlider").on("input", function(){
-  rightEar.frequency.value = $("#rightSlider").val();
-  $("#rightHz").val(rightEar.frequency.value);
-  rightEar.start();
-});
-
-//If value in text box changes, update slider accordingly
-$("#leftHz").on("input", function(){
-  $("#leftSlider").val($("#leftHz").val());
-  leftEar.frequency.value = $("#leftHz").val();
-  leftEar.start();
-});
-
-$("#rightHz").on("input", function(){
-  $("#rightSlider").val($("#rightHz").val());
-  rightEar.frequency.value = $("#rightHz").val();
-  rightEar.start();
-});
-
-function test(){
-
-}
-
-var descriptions = {
-    "Beta": "Beta is the most common brain wave pattern: Beta brainwaves are produced when we are wide awake, alert, active and engaged in mental activity, usually involving more the rational, reality-oriented left hemisphere of our brain. When beta wave activity becomes very intense, our brain hemispheres become less synchronized. Beta state is required to function properly in your everyday life.",
-    "Alpha": "These are lower frequency waves: The state is generated when our thoughts are really not concentrated and our minds wonder freely, or we are in a relaxed state such as meditating or daydreaming. We also experience Alpha Brainwaves when we are gently busy with routine tasks like pottering in the garden, taking a shower, putting on makeup, doing light housework. Alpha is considered to be the bridge between the conscious mind and the subconscious mind.",
-    "Theta": "Theta brainwave states have been used in meditation for centuries: It is common for people to feel as if they are in a trance, where the mind feels as though it may have gone to sleep although it is conscious of what is happening around it. Theta induces a capacity for prolonged daydreaming, where a loss of time may be experienced.",
-    "Delta": "Delta is the place of deepest relaxation, deepest healing, deepest spiritual connection and deepest connection with the subconscious mind. It is considered to be the gateway to the unconscious mind and the collective unconscious, bringing access to the universal psyche or mind.",
-    "Gamma": "Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain."
-};
-
-//Set description dynamically
-var frequencyDescription = new Vue({
-  el: ".description",
-  data: {
-    message: "Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain."
-  }
-});
+var descriptions = [
+    "Beta is the most common brain wave pattern: Beta brainwaves are produced when we are wide awake, alert, active and engaged in mental activity, usually involving more the rational, reality-oriented left hemisphere of our brain. When beta wave activity becomes very intense, our brain hemispheres become less synchronized. Beta state is required to function properly in your everyday life.",
+    "These are lower frequency waves: The state is generated when our thoughts are really not concentrated and our minds wonder freely, or we are in a relaxed state such as meditating or daydreaming. We also experience Alpha Brainwaves when we are gently busy with routine tasks like pottering in the garden, taking a shower, putting on makeup, doing light housework. Alpha is considered to be the bridge between the conscious mind and the subconscious mind.",
+    "Theta brainwave states have been used in meditation for centuries: It is common for people to feel as if they are in a trance, where the mind feels as though it may have gone to sleep although it is conscious of what is happening around it. Theta induces a capacity for prolonged daydreaming, where a loss of time may be experienced.",
+    "Delta is the place of deepest relaxation, deepest healing, deepest spiritual connection and deepest connection with the subconscious mind. It is considered to be the gateway to the unconscious mind and the collective unconscious, bringing access to the universal psyche or mind.",
+    "Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain."
+];
 
 //Frequency is equivalent to difference between frequency in left and right ear
 var frequency = {
@@ -66,3 +27,43 @@ var frequency = {
     "Theta": [4, 8],
     "Delta": [0.1, 4]
 };
+
+//Adjust yellow information box dynamically
+function updateInfo(value1, value2) {
+}
+
+//Check the Hz in each ear and adjust description box accordingly
+$("#leftSlider").on("input", function() {
+    leftEar.frequency.value = $("#leftSlider").val();
+    $("#leftHz").val(leftEar.frequency.value);
+    leftEar.start();
+});
+
+$("#rightSlider").on("input", function() {
+    rightEar.frequency.value = $("#rightSlider").val();
+    $("#rightHz").val(rightEar.frequency.value);
+    rightEar.start();
+});
+
+//If value in text box changes, update slider accordingly
+$("#leftHz").on("input", function() {
+    $("#leftSlider").val($("#leftHz").val());
+    leftEar.frequency.value = $("#leftHz").val();
+    leftEar.start();
+});
+
+$("#rightHz").on("input", function() {
+    $("#rightSlider").val($("#rightHz").val());
+    rightEar.frequency.value = $("#rightHz").val();
+    rightEar.start();
+});
+
+console.log(descriptions[0]);
+
+//Set description dynamically
+var frequencyDescription = new Vue({
+    el: ".description",
+    data: {
+        message: "Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain."
+    }
+});
