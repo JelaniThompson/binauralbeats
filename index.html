@@ -25,7 +25,7 @@
 
     <div class="nav-right">
         <!--Bring up content modal when clicked-->
-        <a class="nav-item button is-info is-medium header-button" href="#">
+        <a class="nav-item button is-info is-medium header-button" id="learn-more">
         Learn More
       </a>
         <a class="nav-item button is-warning is-medium header-button" href="#">
@@ -36,7 +36,7 @@
 
 <body>
     <div class="container">
-        <div class="modal is-active">
+        <div class="modal">
             <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
@@ -44,19 +44,7 @@
                     <button class="delete"></button>
                 </header>
                 <section class="modal-card-body">
-                  <p>The term 'binaural' literally signifies 'to hear with two ears', and was introduced in 1859 to signify the practice of listening to the same sound through both ears, or to two discrete sounds, one through each ear. It was not until 1916 that Carl Stumpf (1848-1936), a German philosopher and psychologist, distinguished between dichotic listening, which refers to the stimulation of each ear with a different stimulus, and diotic listening, the simultaneous stimulation of both ears with the same stimulus.[3][4]
-
-Later, it would be become apparent that binaural hearing, whether dichotic or diotic, is the means by which the geolocation and direction of a sound is determined.[5][6]
-
-Scientific consideration of binaural hearing began before the phenomenon was so named, with the ideas articulated in 1792 by William Charles Wells (1757–1817), a Scottish-American printer, and physician at Saint Thomas' Hospital, London. Wells sought to theoretically examine and explain aspects of human hearing, including the way in which listening with two ears rather than one might affect the perception of sound, which proceeded from his research into binocular vision.[7][8]
-
-Subsequently, between 1796 and 1802, Giovanni Battista Venturi (1746 - 1822), an Italian physicist, savant, man of letters, diplomat, and historian of science, conducted and described a series of experiments intended to elucidate the nature of binaural hearing.[9][10][11][12] It was in an appendix to a monograph on color that Venturi described experiments on auditory localization using one or two ears, concluding that "the inequality of the two impressions, which are perceived at the same time by both ears, determines the correct direction of the sound."[13][14]
-
-However, none of Venturi's contemporaries at the end of the eighteenth and beginning of the nineteenth centuries considered his original work worthy of citation or attention, with the exception of Ernst Florens Friedrich Chladni (1756–1827), a German physicist and musician, who is widely cited as the father of acoustics. After investigating the behavior of vibrating strings and plates, and examining the way in which sound appeared to be perceived, Chladni acknowledged Venturi's work, agreeing with him that the ability to determine the location, and direction of sound depended upon detected differences in a sound between both ears, including amplitude and frequency, subsequently denoted by the term 'interaural differences'.[15][16][17]
-
-Other significant historic investigations into binaural hearing include those of Charles Wheatstone (1802–1875), an English scientist, whose many inventions included the concertina and the stereoscope, Ernst Heinrich Weber (1795–1878), a German physician cited as one of the founders of experimental psychology; and August Seebeck (1805–1849), a scientist at the Technische Universität, Dresden, remembered for his work on sound and hearing. Like Wells, these researchers attempted to compare and contrast what would become known as binaural hearing with the principles of binocular integration generally, and binocular color mixing specifically. They found that binocular vision did not follow the laws of combination of colors from different bands of the spectrum. Rather, it was found that when presenting a different color to each eye, they did not combine, but often competed for perceptual attention.[18][19][20][21]
-
-</p>
+                  <p>Are you feeling it now, Mr. Krabbs?</p>
                 </section>
             </div>
         </div>
@@ -83,7 +71,7 @@ Other significant historic investigations into binaural hearing include those of
 
                 <!--Current State-->
                 <div class="tile is-child notification is-warning">
-                    <p class="title currentState">State</p>
+                    <p class="title currentState">{{ title }}</p>
                     <p class="description">{{ message }}</p>
                 </div>
             </div>

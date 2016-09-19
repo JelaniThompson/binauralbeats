@@ -58,7 +58,22 @@ $("#rightHz").on("input", function() {
     rightEar.start();
 });
 
+$("#learn-more").on("click", function(){
+  $(".modal").addClass("is-active");
+});
+
+$(".delete").on("click", function(){
+  $(".modal").removeClass("is-active");
+});
+
 console.log(descriptions[0]);
+
+var stateTitle = new Vue({
+  el: ".currentState",
+  data: {
+    message: "Dat Boi"
+  }
+});
 
 //Set description dynamically
 var frequencyDescription = new Vue({
