@@ -28,7 +28,7 @@ var frequency = {
     "Delta": [0.1, 4]
 };
 
-//Adjust yellow information box dynamically
+//Adjust information box dynamically
 function findFrequency(left, right) {
     return _.find(freqs, function(value) {
         var range = frequency[value];
@@ -37,10 +37,17 @@ function findFrequency(left, right) {
     });
 }
 
+function updateDescription() {
+    //Update description according to title
+    if (stateTitle.title == "Gamma") {
+        frequencyDescription.description = descriptions[4];
+    }
+}
+
 var stateTitle = new Vue({
     el: ".currentState",
     data: {
-        title: ""
+        title: "Brain States"
     }
 });
 
@@ -48,6 +55,6 @@ var stateTitle = new Vue({
 var frequencyDescription = new Vue({
     el: ".description",
     data: {
-        description: ""
+        description: "When you're set to a specific state, this box will update with the name and description of it! Try experimenting with the sliders above to see all of them. The 5 states are Gamma, Beta, Alpha, Delta and Theta. You can read more about them by clicking the learn more button above. Have fun!"
     }
 });
