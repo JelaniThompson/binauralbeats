@@ -2,7 +2,6 @@
     <title>Binaural Beats</title>
     <!--Add icons to use with Bulma-->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    <script src="node_modules/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/app.css">
 </head>
@@ -44,7 +43,14 @@
                     <button class="delete"></button>
                 </header>
                 <section class="modal-card-body">
-                  <p>Are you feeling it now, Mr. Krabbs?</p>
+                    <p class="title">Videos</p>
+                    <a href="https://www.youtube.com/watch?v=bZGvbqhJUoQ">
+                        <p>Watch Koi Fresco's video on Binaural Beats here</p>
+                    </a>
+                    <p class="title">Read More</p>
+                    <a href="http://www.immramainstitute.com/brainwave-technology-for-health-wellness/binaural-beats-and-how-they-affect-your-brain/">
+                        <p>Binaural Beats and How They Affect Your Brain</p>
+                    </a>
                 </section>
             </div>
         </div>
@@ -61,7 +67,7 @@
                     <!--Left Ear-->
                     <p class="leftInfo">Left Ear</p>
                     <input class="input" id="leftHz" v-model="leftData" type="text" placeholder="Hz">
-                    <input type="range" class="slider" id="leftSlider" onChange="test()" v-model="leftHz" max="1500" value="0" step="10">
+                    <input type="range" class="slider" id="leftSlider" v-model="leftHz" max="1500" value="0" step="10">
 
                     <!--Right Ear-->
                     <p class="rightInfo">Right Ear</p>
@@ -72,7 +78,7 @@
                 <!--Current State-->
                 <div class="tile is-child notification is-warning">
                     <p class="title currentState">{{ title }}</p>
-                    <p class="description">{{ message }}</p>
+                    <p class="description">{{ description }}</p>
                 </div>
             </div>
 
@@ -104,6 +110,16 @@
             </div>
         </div>
                     </div>
+                    <footer class="footer">
+                <div class="content has-text-centered">
+                  <p>
+                    <strong>Wavy Binaural Beats</strong> by <a href="http://github.com/JelaniThompson">Jelani Thompson</a>
+                  </p>
+                </div>
+            </footer>
         <script type="text/javascript" src="node_modules/tone/build/Tone.js"></script>
+        <script src="node_modules/vue/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/lodash/4.16.0/lodash.min.js"></script>
         <script type="text/javascript" src="scripts/sound.js"></script>
+        <script type="text/javascript" src="scripts/events.js"></script>
 </body>

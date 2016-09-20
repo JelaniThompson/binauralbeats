@@ -9,7 +9,7 @@ rightEar.frequency.value = 0;
 $("#leftHz").val(leftEar.frequency.value);
 $("#rightHz").val(rightEar.frequency.value);
 
-var states = ["Beta", "Alpha", "Theta", "Delta", "Gamma"];
+var freqs = ['Delta', 'Theta', 'Alpha', 'Beta', 'Gamma']; // array of frequencies from the lowset to the highest range
 
 var descriptions = [
     "Beta is the most common brain wave pattern: Beta brainwaves are produced when we are wide awake, alert, active and engaged in mental activity, usually involving more the rational, reality-oriented left hemisphere of our brain. When beta wave activity becomes very intense, our brain hemispheres become less synchronized. Beta state is required to function properly in your everyday life.",
@@ -28,57 +28,27 @@ var frequency = {
     "Delta": [0.1, 4]
 };
 
+
 //Adjust yellow information box dynamically
-function updateInfo(value1, value2) {
+function findFrequency(left, right) {
+    return _.find(freqs, function(value) {
+        var range = frequency[value];
+        var diff = Math.abs(left - right);
+        return _.inRange(diff, range[0], range[1]);
+    });
 }
 
-//Check the Hz in each ear and adjust description box accordingly
-$("#leftSlider").on("input", function() {
-    leftEar.frequency.value = $("#leftSlider").val();
-    $("#leftHz").val(leftEar.frequency.value);
-    leftEar.start();
-});
-
-$("#rightSlider").on("input", function() {
-    rightEar.frequency.value = $("#rightSlider").val();
-    $("#rightHz").val(rightEar.frequency.value);
-    rightEar.start();
-});
-
-//If value in text box changes, update slider accordingly
-$("#leftHz").on("input", function() {
-    $("#leftSlider").val($("#leftHz").val());
-    leftEar.frequency.value = $("#leftHz").val();
-    leftEar.start();
-});
-
-$("#rightHz").on("input", function() {
-    $("#rightSlider").val($("#rightHz").val());
-    rightEar.frequency.value = $("#rightHz").val();
-    rightEar.start();
-});
-
-$("#learn-more").on("click", function(){
-  $(".modal").addClass("is-active");
-});
-
-$(".delete").on("click", function(){
-  $(".modal").removeClass("is-active");
-});
-
-console.log(descriptions[0]);
-
 var stateTitle = new Vue({
-  el: ".currentState",
-  data: {
-    message: "Dat Boi"
-  }
+    el: ".currentState",
+    data: {
+        title: "Test"
+    }
 });
 
 //Set description dynamically
 var frequencyDescription = new Vue({
     el: ".description",
     data: {
-        message: "Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain."
+        description: "Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain."
     }
 });
