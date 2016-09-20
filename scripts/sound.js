@@ -28,7 +28,6 @@ var frequency = {
     "Delta": [0.1, 4]
 };
 
-
 //Adjust yellow information box dynamically
 function findFrequency(left, right) {
     return _.find(freqs, function(value) {
@@ -41,7 +40,7 @@ function findFrequency(left, right) {
 var stateTitle = new Vue({
     el: ".currentState",
     data: {
-        title: "Test"
+        title: ""
     }
 });
 
@@ -49,6 +48,6 @@ var stateTitle = new Vue({
 var frequencyDescription = new Vue({
     el: ".description",
     data: {
-        description: "Gamma brainwave states are the most rapid in frequency. Gamma hase long been considered the the brainwave that is able to link and process information from all parts of the brain. It is the frequency that brings with it the ability to process large amounts of information in relatively small amounts of time. Think of generating more Gamma activity as getting a processor upgrade for your brain."
+        description: ""
     }
 });
