@@ -21,11 +21,11 @@ var descriptions = [
 
 //Frequency is equivalent to difference between frequency in left and right ear
 var frequency = {
-    "Gamma": [30, 50],
-    "Beta": [14, 30],
-    "Alpha": [8, 14],
-    "Theta": [4, 8],
-    "Delta": [0.1, 4]
+    "Gamma": [30, 51],
+    "Beta": [14, 31],
+    "Alpha": [8, 15],
+    "Theta": [4, 9],
+    "Delta": [0.1, 5]
 };
 
 //Adjust information box dynamically
@@ -41,6 +41,14 @@ function updateDescription() {
     //Update description according to title
     if (stateTitle.title == "Gamma") {
         frequencyDescription.description = descriptions[4];
+    } else if (stateTitle.title == "Beta") {
+        frequencyDescription.description = descriptions[0];
+    } else if (stateTitle.title == "Alpha") {
+        frequencyDescription.description = descriptions[1];
+    } else if (stateTitle.title == "Theta") {
+        frequencyDescription.description = descriptions[2];
+    } else if (stateTitle.title == "Delta") {
+        frequencyDescription.description = descriptions[3];
     }
 }
 
